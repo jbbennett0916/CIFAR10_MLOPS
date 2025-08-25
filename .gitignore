@@ -1,1 +1,37 @@
+# Dataset folders
 Data/cifar-10-batches-py/
+data/raw/
+data/processed/
+
+# Model checkpoints
+models/*.pt
+models/*.h5
+models/*.ckpt
+
+# Logs
+logs/
+*.log
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
+*.env
+venv/
+env/
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.swp
+*.DS_Store
+
+# IDE / editor specific
+.vscode/
+.idea/

@@ -1,6 +1,6 @@
 from torch import nn
 
-
+# recreate the TinyVGG model
 class Tiny_Model(nn.Module):
   def __init__(self, input_shape=3, hidden_units=64, output_shape=10):
     super().__init__()

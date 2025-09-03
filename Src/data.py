@@ -23,7 +23,7 @@ def get_transforms(train=True):
     if train: 
         return transforms.Compose([
             transforms.RandomCrop(32, padding=4),
-            transforms.randomHorizontalFlip(),
+            transforms.RandomHorizontalFlip(),
             transforms.ToTensor(),
             transforms.Normalize(CIFAR10_MEAN, CIFAR10_STD)
         ])
@@ -35,8 +35,8 @@ def get_transforms(train=True):
 
 
 def get_dataloader(root="data", batch_size=32, num_workers=4):
-    train_dataset = datasets.CIFAR10(root, download=True, train=True, transforms=get_transforms())
-    test_dataset = datasets.CIFAR10(root, download=True, train=False, transforms=get_transforms(train=False))
+    train_dataset = datasets.CIFAR10(root, download=True, train=True, transform=get_transforms())
+    test_dataset = datasets.CIFAR10(root, download=True, train=False, transform=get_transforms(train=False))
     train_dataloader = DataLoader(train_dataset,batch_size=batch_size, shuffle=True, num_workers=num_workers)
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False,num_workers=num_workers)
     return train_dataloader, test_dataloader, train_dataset.classes

@@ -10,12 +10,11 @@ def root():
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
     img_bytes = await file.read()
-    label, confidence = predict_image(img_bytes)
-    return {"label":label, "confidence":confidence}
-
-
-
-
-
-
-
+    print(f"Received file: {file.filename}, Size: {len(img_bytes)} bytes")
+    try:
+        label, confidence = predict_image(img_bytes)
+        return {"label":label, "confidence":confidence}
+    except Exception as e:
+        print(f"Error during prediction: {str(e)}")
+        return {"Error:", str(e)}
+    

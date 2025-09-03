@@ -27,7 +27,7 @@ def train_model(epochs=20, batch_size=32, lr=.001, model_dir="models"):
     # create the model
     model = create_model().to(device)
     # create the loss function and optimizer
-    loss_fn = nn.CrossEntroyLoss()
+    loss_fn = nn.CrossEntropyLoss()
     optimizer = Adam(params=model.parameters(), lr=lr)
     # create the model directory if it doesn't exist
     Path(model_dir).mkdir(exist_ok=True)

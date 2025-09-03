@@ -2,11 +2,14 @@
 Data/cifar-10-batches-py/
 data/raw/
 data/processed/
+data/*.tar.gz
+
 
 # Model checkpoints
 models/*.pt
 models/*.h5
 models/*.ckpt
+models/*.pth
 
 # Logs
 logs/
@@ -35,3 +38,8 @@ env/
 # IDE / editor specific
 .vscode/
 .idea/
+
+# images
+*.jpg
+*.png
+*.jpeg

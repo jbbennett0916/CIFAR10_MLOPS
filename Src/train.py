@@ -3,8 +3,8 @@ from torch import nn
 from torch.optim import Adam
 from tqdm import tqdm
 from pathlib import Path
-from Src.model import create_model
-from Src.data import get_dataloader
+from src.model import create_model
+from src.data import get_dataloader
 
 
 def accuracy(outputs, targets):

@@ -1,7 +1,7 @@
 import io, json, torch
 from PIL import Image
 from torchvision import transforms
-from Src.model import create_model
+from src.model import create_model
 
 def load_model(model_path="models/tinyvgg_best.pth", meta_path="models/meta.json", device="cpu"):
     device = torch.device(device)

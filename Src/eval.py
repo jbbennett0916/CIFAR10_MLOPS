@@ -29,7 +29,7 @@ def load_best(model_path="models/tinyvgg_best.pth",meta_path="models/meta.json")
     model.eval()
     # prefer classes from checkpoint if available, else from meta.json
     classes = ckpt.get("classes", meta["classes"])
-    return meta, classes
+    return model, classes
 
 
 def evaluate():

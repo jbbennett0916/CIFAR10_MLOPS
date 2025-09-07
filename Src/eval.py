@@ -26,6 +26,7 @@ def load_best(model_path="models/tinyvgg_best.pth",meta_path="models/meta.json")
     # create the model and load the state_dict
     model = create_model()
     model.load_state_dict(ckpt["state_dict"])
+    # set the model to evaluation mode
     model.eval()
     # prefer classes from checkpoint if available, else from meta.json
     classes = ckpt.get("classes", meta["classes"])

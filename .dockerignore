@@ -1,0 +1,24 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+env/
+
+# Dataset/test files
+*.jpg
+*.png
+
+# Model checkpoints or large files
+*.pth
+*.gz
+
+# Git files
+.git/
+.gitignore
+
+
+# Mac specific
+.DS_Store

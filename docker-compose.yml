@@ -1,0 +1,57 @@
+version: "3.9"
+
+services:
+  # Training container
+  train:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tinyvgg_train
+    volumes:
+      - .:/app  # Mount local project folder for live updates
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python -m src.train
+    restart: "no"
+
+  # API container
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tinyvgg_api
+    ports:
+      - "5001:5000"  # Map container port to host
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python -m src.api
+
+    restart: always
+
+  # Inference container
+  inference:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tinyvgg_inference
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python -m src.inference
+    restart: "no"
+
+  # Evaluation container
+  eval:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tinyvgg_eval
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python -m src.eval
+    restart: "no"

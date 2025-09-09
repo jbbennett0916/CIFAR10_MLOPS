@@ -43,3 +43,6 @@ env/
 *.jpg
 *.png
 *.jpeg
+
+# mlflow
+mlruns/

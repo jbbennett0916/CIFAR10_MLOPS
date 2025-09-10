@@ -22,3 +22,21 @@ env/
 
 # Mac specific
 .DS_Store
+
+
+# .dockerignore - keep the container lightweight
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.git
+.gitignore
+data/
+models/
+notebooks/
+tests/
+*.tar.gz
+*.pth

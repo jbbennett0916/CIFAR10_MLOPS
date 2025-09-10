@@ -46,3 +46,6 @@ env/
 
 # mlflow
 mlruns/
+
+# dockerhub image name
+full_image_name.txt

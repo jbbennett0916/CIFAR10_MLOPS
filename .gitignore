@@ -49,3 +49,6 @@ mlruns/
 
 # dockerhub image name
 full_image_name.txt
+
+# Tree structure for - README.md
+structure.txt
